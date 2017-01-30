@@ -12,7 +12,13 @@ class DefaultController extends Controller
         return $this->render('TestBundle:Default:index.html.twig');
     }
 
-    public function helloAction($name) {
-        return new Response("Hello ".$name." !");
+    public function helloAction() {
+        return $this->render('TestBundle:Default:index.html.twig', array("name" =>"Hello toi ! :) <3"));
+        //return new Response("Hello toi ! :) <3");
+    }
+
+    public function hello2Action($name) {
+        return $this->render('TestBundle:Default:index.html.twig', array("name" =>$name));
+        //return new Response("Hello ".$name." !");
     }
 }

@@ -2,6 +2,10 @@ test_homepage:
     path:     /
     defaults: { _controller: TestBundle:Default:index }
 
-hello_route:
+hello_route2:
     path:     /hello/{name}
+    defaults: { _controller: TestBundle:Default:hello2 }
+
+hello_route:
+    path:     /hello/
     defaults: { _controller: TestBundle:Default:hello }
