@@ -1,0 +1,10 @@
+{% extends 'BlogFrontBundle::general.html.twig' %}
+    {% set article = app.request.get("article") %}
+    {% block body %}
+        <p>{{ content }}</p>
+        <div>
+            <h3>{{ article.titre | capitalize }}</h3>
+            <p><i>{{ article.auteur }}</i>&nbsp;&nbsp;{{ article.date | date("d/m/Y", "Europe/Paris") }}</p>
+            <p>{{ article.contenu | reverse }}</p>
+        </div>
+    {% endblock %}
