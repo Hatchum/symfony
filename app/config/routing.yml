@@ -1,3 +1,11 @@
+blog_front:
+    resource: "@BlogFrontBundle/Resources/config/routing.yml"
+    prefix:   /
+
+test:
+    resource: "@TestBundle/Resources/config/routing.yml"
+    prefix:   /test
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

@@ -1,0 +1,11 @@
+route_index:
+    path:     /
+    defaults: { _controller: BlogFrontBundle:Default:index }
+
+route_view:
+    path:   /post/{id}
+    defaults: { _controller: BlogFrontBundle:Post:view }
+
+route_about:
+    path:   /about
+    defaults: { _controller: BlogFrontBundle:Default:about }

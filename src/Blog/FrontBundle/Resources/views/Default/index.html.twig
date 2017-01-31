@@ -1,0 +1,33 @@
+{% extends 'BlogFrontBundle::general.html.twig' %}
+    {% block body %}
+        <h2>{{ content }}</h2>
+
+        {% set tableau = {  '1' : { 'titre' : 'article 1',
+                                    'auteur' : 'Auteur 1',
+                                    'date' : '31012017',
+                                    'contenu' : 'Contenu texte 1'
+                                    },
+                            '2' : { 'titre' : 'article 2',
+                                    'auteur' : 'Auteur 2',
+                                    'date' : '31012017',
+                                    'contenu' : '<a href="#">Contenu texte 2</a>'
+                                    },
+                            '3' : { 'titre' : 'article 3',
+                                    'auteur' : 'Auteur 3',
+                                    'date' : '31012017',
+                                    'contenu' : 'Contenu texte 3'
+                                    }
+                            }
+        %}
+
+        {% for key, value in tableau %}
+            <div style="display: inline-block;padding: 20px;">
+                <h3><a href="{{ path('route_view', {'id' : key, 'article':value}) }}">{{ value.titre | upper }}</a></h3>
+                <p><i>{{ value.auteur }}</i>&nbsp;&nbsp;{{ value.date | date("d/m/Y", "Europe/Paris") }}</p>
+                {% autoescape 'html' %}
+                    <p>{{ value.contenu }}</p>
+                {% endautoescape %}
+            </div>
+        {% endfor %}
+
+    {% endblock %}
