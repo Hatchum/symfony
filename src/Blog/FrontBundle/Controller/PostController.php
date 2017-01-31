@@ -19,6 +19,6 @@ class PostController extends Controller
             throw new HttpException(404, 'Page introuvable');
         }
         else
-            return $this->render('BlogFrontBundle:Default:index.html.twig', array("content" => "Affichage de l'article n°".$id));
+            return $this->render('BlogFrontBundle:Default:index.html.twig', array("title" => "Article ".$id,"content" => "Affichage de l'article n°".$id));
     }
 }
