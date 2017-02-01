@@ -4,6 +4,7 @@ namespace Blog\FrontBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
+
 /**
  * PostRepository
  *
@@ -12,4 +13,13 @@ use Doctrine\ORM\EntityRepository;
  */
 class PostRepository extends EntityRepository
 {
+    public function getLastPost($nbPosts) {
+        //$repository = $this->_em->getRepository('BlogFrontBundle:Post');
+        //$posts = $repository->findBy(array('id'=>'*'), array('datePublish' => 'DESC'), $nbPosts, null);
+
+        $posts = $this->getEntityManager()
+                        ->createQuery('SELECT p FROM BlogFrontBundle:Post p ORDER BY p.datePublish DESC')
+                        ->setMaxResults($nbPosts);
+        return $posts->getResult();
+    }
 }

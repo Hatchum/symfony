@@ -100,4 +100,36 @@ class User
     {
         return $this->email;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getPosts()
+    {
+        return $this->posts;
+    }
+
+    /**
+     * @param mixed $posts
+     */
+    public function setPosts($posts)
+    {
+        $this->posts = $posts;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBiography()
+    {
+        return $this->biography;
+    }
+
+    /**
+     * @param mixed $biography
+     */
+    public function setBiography($biography)
+    {
+        $this->biography = $biography;
+    }
 }

@@ -43,14 +43,53 @@ class Post
     private $datePublish;
 
     /**
-     * @ORM\OneToMany(targetEntity="Comment", mappedBy="post")
+     * @var int
+     * @ORM\OneToMany(targetEntity="Blog\FrontBundle\Entity\Comment", mappedBy="posts", cascade="all")
      */
     private $comments;
 
     /**
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="posts")
+     * @return mixed
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    /**
+     * @param mixed $comments
+     */
+    public function setComments($comments)
+    {
+        $this->comments = $comments;
+    }
+
+    /**
+     * @var int
+     * @ORM\ManyToOne(targetEntity="Blog\FrontBundle\Entity\User", inversedBy="posts")
      */
     private $user;
+
+    /**
+     * Get user
+     *
+     * @return integer
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set user
+     *
+     * @param int $user
+     * @return Post
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
 
 
     /**

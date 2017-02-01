@@ -36,9 +36,26 @@ class Comment
     private $description;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Post", inversedBy="comments")
+     * @var integer
+     * @ORM\ManyToOne(targetEntity="Blog\FrontBundle\Entity\Post", inversedBy="comments", cascade="all")
      */
-    private $post;
+    private $posts;
+
+    /**
+     * @return mixed
+     */
+    public function getPosts()
+    {
+        return $this->posts;
+    }
+
+    /**
+     * @param mixed $posts
+     */
+    public function setPosts($posts)
+    {
+        $this->posts = $posts;
+    }
 
 
     /**

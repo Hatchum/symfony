@@ -20,12 +20,13 @@
                             }
         %}
 
-        {% for key, value in tableau %}
+        {% for value in posts %}
             <div style="display: inline-block;padding: 20px;">
-                <h3><a href="{{ path('route_view', {'id' : key, 'article':value}) }}">{{ value.titre | upper }}</a></h3>
-                <p><i>{{ value.auteur }}</i>&nbsp;&nbsp;{{ value.date | date("d/m/Y", "Europe/Paris") }}</p>
+                {{ dump(value) }}
+                <h3><a href="{{ path('route_view', {'id' : value.id}) }}">{{ value.title | upper }}</a></h3>
+                <p><i>{{ value.user.name }}</i>&nbsp;&nbsp;{{ value.datePublish | date('d/m/Y') }}</p>
                 {% autoescape 'html' %}
-                    <p>{{ value.contenu }}</p>
+                    <p>{{ value.text }}</p>
                 {% endautoescape %}
             </div>
         {% endfor %}

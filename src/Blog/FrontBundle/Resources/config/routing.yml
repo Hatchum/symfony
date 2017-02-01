@@ -9,3 +9,7 @@ route_view:
 route_about:
     path:   /about
     defaults: { _controller: BlogFrontBundle:Default:about }
+
+route_show:
+    path:   /lastpost/{nbPosts}
+    defaults: { _controller: BlogFrontBundle:Post:showLastPost }
