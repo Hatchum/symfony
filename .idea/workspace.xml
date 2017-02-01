@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2d7aee4-92e0-4fe1-ae51-633062b6d081" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blog/FrontBundle/Controller/PostController.php" afterPath="$PROJECT_DIR$/src/Blog/FrontBundle/Controller/PostController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blog/FrontBundle/Entity/Biography.php" afterPath="$PROJECT_DIR$/src/Blog/FrontBundle/Entity/Biography.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blog/FrontBundle/Entity/Comment.php" afterPath="$PROJECT_DIR$/src/Blog/FrontBundle/Entity/Comment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blog/FrontBundle/Entity/Post.php" afterPath="$PROJECT_DIR$/src/Blog/FrontBundle/Entity/Post.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blog/FrontBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/Blog/FrontBundle/Entity/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blog/FrontBundle/Repository/PostRepository.php" afterPath="$PROJECT_DIR$/src/Blog/FrontBundle/Repository/PostRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blog/FrontBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/Blog/FrontBundle/Resources/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blog/FrontBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/Blog/FrontBundle/Resources/views/Default/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blog/FrontBundle/Resources/views/Default/post.html.twig" afterPath="$PROJECT_DIR$/src/Blog/FrontBundle/Resources/views/Default/post.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blog/FrontBundle/Repository/CommentRepository.php" afterPath="$PROJECT_DIR$/src/Blog/FrontBundle/Repository/CommentRepository.php" />
     </list>
     <ignored path="symfony.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -99,14 +90,24 @@
     <splitter split-orientation="horizontal" split-proportion="0.4789644">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="PostRepository.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="PostRepository.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Blog/FrontBundle/Repository/PostRepository.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5227552">
-                  <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+                <state vertical-scroll-proportion="-12.423077">
+                  <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="22" selection-end-column="35" />
                   <folding>
                     <marker date="1485942979115" expanded="true" signature="567:631" placeholder="SELECT p FRO..BlogFrontBundle..." />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CommentRepository.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Blog/FrontBundle/Repository/CommentRepository.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.4391144">
+                  <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -115,11 +116,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="PostController.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="PostController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Blog/FrontBundle/Controller/PostController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-17.0">
-                  <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.6900369">
+                  <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
                   <folding>
                     <element signature="e#129#186#0#PHP" expanded="true" />
                   </folding>
@@ -150,10 +151,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="routing.yml" pinned="false" current-in-tab="true">
+          <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Blog/FrontBundle/Resources/config/routing.yml">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.28367105">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
                   <folding />
                 </state>
@@ -200,8 +201,9 @@
         <option value="$PROJECT_DIR$/src/Blog/FrontBundle/Resources/config/doctrine/User.orm.yml" />
         <option value="$PROJECT_DIR$/src/Blog/FrontBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/Blog/FrontBundle/Resources/views/Default/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Blog/FrontBundle/Controller/PostController.php" />
         <option value="$PROJECT_DIR$/src/Blog/FrontBundle/Resources/views/Default/post.html.twig" />
+        <option value="$PROJECT_DIR$/src/Blog/FrontBundle/Repository/CommentRepository.php" />
+        <option value="$PROJECT_DIR$/src/Blog/FrontBundle/Controller/PostController.php" />
       </list>
     </option>
   </component>
@@ -534,7 +536,7 @@
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18042071" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18042071" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298731" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24514563" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -903,31 +905,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Blog/FrontBundle/Controller/PostController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.0">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="e#129#186#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Blog/FrontBundle/Resources/views/Default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-22.23077">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Blog/FrontBundle/Repository/PostRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5227552">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <marker date="1485942979115" expanded="true" signature="567:631" placeholder="SELECT p FRO..BlogFrontBundle..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -944,8 +926,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Blog/FrontBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28367105">
+        <state vertical-scroll-proportion="0.0">
           <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Blog/FrontBundle/Repository/PostRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.423077">
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="22" selection-end-column="35" />
+          <folding>
+            <marker date="1485942979115" expanded="true" signature="567:631" placeholder="SELECT p FRO..BlogFrontBundle..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Blog/FrontBundle/Controller/PostController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6900369">
+          <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+          <folding>
+            <element signature="e#129#186#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Blog/FrontBundle/Repository/CommentRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4391144">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>

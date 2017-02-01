@@ -19,12 +19,13 @@ class PostController extends Controller
             throw new HttpException(404, 'Page introuvable');
         }
         else {
-            $post = $this->getDoctrine()->getManager()
-                        ->getRepository('BlogFrontBundle:Post')
+            $em = $this->getDoctrine()->getManager();
+
+            $post = $em->getRepository('BlogFrontBundle:Post')
                         ->findOneBy(array('id'=>$id));
-            $comments = $this->getDoctrine()->getManager()
-                            ->getRepository('BlogFrontBundle:Comment')
-                            ->findBy(array('posts'=>$id));
+            $comments = $em->getRepository('BlogFrontBundle:Comment')
+                            ->getComments($id);
+
             return $this->render('BlogFrontBundle:Default:post.html.twig',
                                 array("content" => "Affichage de l'article n°" . $id, "article" => $post, "comments" => $comments));
         }

@@ -12,4 +12,10 @@ use Doctrine\ORM\EntityRepository;
  */
 class CommentRepository extends EntityRepository
 {
+    public function getComments($idPost){
+        $comments =$this->getDoctrine()->getManager()
+                    ->getRepository('BlogFrontBundle:Comment')
+                    ->findBy(array('posts'=>$idPost));
+        return $comments;
+    }
 }
