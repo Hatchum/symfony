@@ -12,4 +12,9 @@ use Doctrine\ORM\EntityRepository;
  */
 class UserRepository extends EntityRepository
 {
+    public function getUsers(){
+        $users = $this->getEntityManager()
+            ->createQuery('SELECT user FROM BlogFrontBundle:User user ORDER BY user.name ASC');
+        return $users->getResult();
+    }
 }

@@ -1,0 +1,14 @@
+{% extends "BlogFrontBundle::general.html.twig" %}
+
+{% block title %}BlogFrontBundle:User:list{% endblock %}
+
+{% block body %}
+<h1>Welcome to the User:list page</h1>
+    <div>
+        {% for user in users %}
+            <h2>{{ user.name }}</h2>
+            <i>{{ user.email }}</i>
+            <p>{{ user.biography.description }}</p>
+        {% endfor %}
+    </div>
+{% endblock %}

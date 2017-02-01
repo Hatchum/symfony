@@ -13,3 +13,7 @@ route_about:
 route_show:
     path:   /lastpost/{nbPosts}
     defaults: { _controller: BlogFrontBundle:Post:showLastPost }
+
+route_user:
+    path:     /users
+    defaults: { _controller: BlogFrontBundle:User:list }
