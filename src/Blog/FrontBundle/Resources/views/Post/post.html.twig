@@ -7,8 +7,12 @@
             <h3>{{ article.title | capitalize }}</h3>
             <p><i>{{ article.user.name }}</i>&nbsp;&nbsp;{{ article.datePublish | date("d/m/Y", "Europe/Paris") }}</p>
             <p>{{ article.text | reverse }}</p>
+
             <div style="width: 100%">
             <h4>Commentaires :</h4>
+                <div>
+                    {{ form(form) }}
+                </div>
                 {% for value in comments %}
                     <p><i>{{ value.title }}</i></p>
                     <p style="text-align: justify;">{{ value.description }}</p>

@@ -1,0 +1,12 @@
+Blog\FrontBundle\Entity\Comment:
+    properties:
+        title:
+            - NotBlank: ~
+            - Length:
+                min: 5
+                max: 150
+        description:
+            - NotBlank: ~
+            - Length:
+                min: 20
+                max: 255
