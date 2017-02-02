@@ -31,7 +31,7 @@ class PostController extends Controller
             $comments = $em->getRepository('BlogFrontBundle:Comment')
                             ->findBy(array("posts"=>$id));
 
-            $viewForm = $this->addComment($request);
+            $viewForm = $this->addComment($request, $id);
 
             return $this->render('BlogFrontBundle:Post:post.html.twig',
                                 array("content" => "Affichage de l'article n°" . $id,
@@ -51,7 +51,7 @@ class PostController extends Controller
                             );
     }
 
-    public function addComment(Request $request){
+    public function addComment(Request $request, $id){
         $comment = new Comment();
 
         $form = $this->createFormBuilder($comment)
@@ -75,6 +75,14 @@ class PostController extends Controller
                             .$form->get('title')->getData()
                             .'<br>'
                             .$comment->getDescription();
+
+            $em = $this->getDoctrine()->getManager();
+
+            $postID = $this->getDoctrine()->getManager()
+                ->getRepository('BlogFrontBundle:Post')->find($id);
+            $comment->setPosts($postID);
+            $em->persist($comment);
+            $em->flush();
 
             return new Response($validForm);
         }
