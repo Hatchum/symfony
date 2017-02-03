@@ -37,7 +37,8 @@ class PostController extends Controller
                                 array("content" => "Affichage de l'article n°" . $id,
                                     "article" => $post,
                                     "comments" => $comments,
-                                    "form" => $viewForm)
+                                    "form" => $viewForm['form'],
+                                    "response" => $viewForm['response'])
                                 );
         }
     }
@@ -70,23 +71,27 @@ class PostController extends Controller
 
         $form->handleRequest($request);
 
-        if($form->isValid()) {
-            $validForm = 'Formulaire Valide : <br>'
-                            .$form->get('title')->getData()
-                            .'<br>'
-                            .$comment->getDescription();
+        if($form->isSubmitted()) {
+            if ($form->isValid()) {
+                $validForm = 'Formulaire Valide : <br>'
+                    . $form->get('title')->getData()
+                    . '<br>'
+                    . $comment->getDescription();
 
-            $em = $this->getDoctrine()->getManager();
+                /*$em = $this->getDoctrine()->getManager();
 
-            $postID = $this->getDoctrine()->getManager()
-                ->getRepository('BlogFrontBundle:Post')->find($id);
-            $comment->setPosts($postID);
-            $em->persist($comment);
-            $em->flush();
+                $postID = $this->getDoctrine()->getManager()
+                    ->getRepository('BlogFrontBundle:Post')->find($id);
+                $comment->setPosts($postID);
+                $em->persist($comment);
+                $em->flush();*/
 
-            return new Response($validForm);
-        }
+                $response = new Response($validForm);
+            } else
+                $response = 'false';
+        } else
+            $response = 'null';
 
-        return $form->createView();
+        return array('form' => $form->createView(), 'response' => $response);
     }
 }

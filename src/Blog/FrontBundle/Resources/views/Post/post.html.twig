@@ -1,23 +1,39 @@
 {% extends 'BlogFrontBundle::general.html.twig' %}
-    {# set article = app.request.get("article") #}
-    {% block body %}
-        <p>{{ content }}</p>
-        <div>
-        <div style="margin: 0 auto; width: 100%; height: 100%">
-            <h3>{{ article.title | capitalize }}</h3>
-            <p><i>{{ article.user.name }}</i>&nbsp;&nbsp;{{ article.datePublish | date("d/m/Y", "Europe/Paris") }}</p>
-            <p>{{ article.text | reverse }}</p>
+{# set article = app.request.get("article") #}
+{% block body %}
+    <p>{{ content }}</p>
+    <div>
+    <div style="margin: 0 auto; width: 100%; height: 100%">
+        <h3>{{ article.title | capitalize }}</h3>
+        <p><i>{{ article.user.name }}</i>&nbsp;&nbsp;{{ article.datePublish | date("d/m/Y", "Europe/Paris") }}</p>
+        <p>{{ article.text | reverse }}</p>
 
-            <div style="width: 100%">
+        <div style="width: 100%">
+            {{ dump(response) }}
             <h4>Commentaires :</h4>
-                <div>
-                    {{ form(form) }}
-                </div>
-                {% for value in comments %}
-                    <p><i>{{ value.title }}</i></p>
-                    <p style="text-align: justify;">{{ value.description }}</p>
-                {% endfor %}
+            <div>
+                {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    {% if response != 'null' %}
+                        {% if response != 'false' %}
+                            <div class="alert alert-success">
+                                {{ response }}
+                            </div>
+                        {% else %}
+                            <div class="alert alert-danger">
+                                {#form_errors(form.description) #}
+                                <p>Attention ! Formulaire Invalidé !</p>
+                                <p>Veuillez vérifier les champs !</p>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                {{ form_end(form) }}
             </div>
+            {% for value in comments %}
+                <p><i>{{ value.title }}</i></p>
+                <p style="text-align: justify;">{{ value.description }}</p>
+            {% endfor %}
         </div>
-        </div>
-    {% endblock %}
+    </div>
+    </div>
+{% endblock %}

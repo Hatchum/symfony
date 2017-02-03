@@ -14,6 +14,18 @@ route_show:
     path:   /lastpost/{nbPosts}
     defaults: { _controller: BlogFrontBundle:Post:showLastPost }
 
-route_user:
+route_users:
     path:     /users
     defaults: { _controller: BlogFrontBundle:User:list }
+
+route_edit_post:
+    path:     /admin/edit/{id}
+    defaults: { _controller: BlogFrontBundle:Admin:edit }
+
+route_add_post:
+    path:     /admin/add
+    defaults: { _controller: BlogFrontBundle:Admin:add }
+
+route_delete_comment:
+    path:     /admin/delete
+    defaults: { _controller: BlogFrontBundle:Admin:delete }

@@ -1,0 +1,29 @@
+{% extends 'BlogFrontBundle::general.html.twig' %}
+{% block body %}
+    <div>
+        <div style="margin: 0 auto; width: 100%; height: 100%">
+            <div style="width: 100%">
+                {{ dump(response) }}
+                <h4>Edit Post :</h4>
+                <div>
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    {% if response != 'null' %}
+                        {% if response != 'false' %}
+                            <div class="alert alert-success">
+                                {{ response }}
+                            </div>
+                        {% else %}
+                            <div class="alert alert-danger">
+                                {#form_errors(form) #}
+                                <p>Attention ! Formulaire Invalidé !</p>
+                                <p>Veuillez vérifier les champs !</p>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
